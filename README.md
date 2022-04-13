@@ -10,8 +10,8 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 
-![Alt text](https://www.42malaga.com/wp-content/uploads/2021/01/42-Malaga-Fundacion-Telefonica-300x91.png)
-<img src="https://www.42malaga.com/wp-content/uploads/2021/01/42-Malaga-Fundacion-Telefonica-300x91.png">
+![42 malaga](https://www.42malaga.com/wp-content/uploads/2021/01/42-Malaga-Fundacion-Telefonica-300x91.png)
+
 
 
 
