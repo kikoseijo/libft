@@ -6,9 +6,11 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:12:04 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 14:27:41 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:32:00 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
