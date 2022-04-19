@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:47 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 16:54:40 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:00:46 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 ** RETURN VALUES
 ** The memcpy() function returns the original value of dst.
 */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
