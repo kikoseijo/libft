@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:32 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 10:36:06 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 00:09:48 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,31 @@
 ** to by str to int representation.
 */
 
-int	ft_atoi(const char *str);
+static int	is_space(char c)
+{
+	if (c == '\t' || c == '\n' || c == '\v')
+		return (1);
+	if (c == '\f' || c == '\r' || c == ' ')
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	res;
+	int	is_neg;
+
+	i = 0;
+	is_neg = 1;
+	while (is_space(str[i]))
+		i++;
+	if (str[i] == '-')
+		is_neg = -1;
+	if (is_neg == -1 || str[i] == '+')
+		i++;
+	res = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+		res = (res * 10) + (str[i++] - '0');
+	return (res * is_neg);
+}
