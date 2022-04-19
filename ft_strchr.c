@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:56 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 11:11:51 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:14:17 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	while (*s)
+	{
+		if (*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
+	}
+	return (NULL);
 }
