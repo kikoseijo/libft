@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:23:09 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 14:21:32 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 10:33:45 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long	n;
+	long	nb;
 
-	n = nb;
-	if (n < 0)
+	nb = n;
+	if (nb < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n = -n;
+		nb = -nb;
 	}
-	if (n > 9)
+	if (nb > 9)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
 	}
 	else
-		ft_putchar_fd(n + '0', fd);
+		ft_putchar_fd(nb + '0', fd);
 }
