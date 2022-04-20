@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:44 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 20:02:39 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:43:12 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 ** This behavior is not required by C and portable code should only
 ** depend on the sign of the returned value.
 */
+
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

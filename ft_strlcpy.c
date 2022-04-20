@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:12:01 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 14:42:19 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:50:52 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@
 ** If the src and dst strings overlap, the behavior is undefined.
 */
 
+#include "libft.h"
+
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	i;
@@ -44,10 +46,10 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 	{
 		while (src[i] != '\0' && i < dstsize - 1)
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
 	return (ft_strlen(src));
 }

@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:59 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 14:37:02 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:47:41 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,25 @@
 ** If the src and dst strings overlap, the behavior is undefined.
 */
 
+#include "libft.h"
+
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	dest_count;
 	size_t	i;
 
-	dest_count = ft_strlen(dest);
+	dest_count = ft_strlen(dst);
 	i = 0;
-	if (size > dest_count)
+	if (dstsize > dest_count)
 	{
-		while (i < (size - dest_count) - 1 && src[i] != '\0')
+		while (i < (dstsize - dest_count) - 1 && src[i] != '\0')
 		{
-			dest[dest_count + i] = src[i];
+			dst[dest_count + i] = src[i];
 			i++;
 		}
-		if (i <= size - dest_count)
-			dest[dest_count + i] = '\0';
+		if (i <= dstsize - dest_count)
+			dst[dest_count + i] = '\0';
 		return (dest_count + ft_strlen(src));
 	}
-	return (size + ft_strlen(src));
+	return (dstsize + ft_strlen(src));
 }

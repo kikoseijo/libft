@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:12:09 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 18:09:38 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:51:12 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 ** Since the strnstr() function is a FreeBSD specific API,
 ** it should only be used when portability is not a concern.
 */
+
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

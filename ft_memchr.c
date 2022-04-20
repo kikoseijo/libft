@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:41 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 19:51:31 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:55:06 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 ** The memchr() function returns a pointer to the byte located,
 ** or NULL if no such byte exists within n bytes.
 */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
