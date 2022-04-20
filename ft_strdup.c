@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:13:31 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 16:53:54 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:54:48 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 
 char	*ft_strdup(const char *s1)
 {
-	size_t	i;
 	char	*res;
 
 	res = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
