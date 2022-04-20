@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_split.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:16:59 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/20 16:51:29 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:02:08 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_wordcount(char *s, int sep)
 {
@@ -76,30 +75,4 @@ char	**ft_split(char const *s, char c)
 		j++;
 	}
 	return (tab);
-}
-
-int	main(void)
-{
-	char	**trab;
-	int		i;
-
-	printf("split---------------------------------------\n");
-	trab = ft_split("111aki1yama11ryo111jiro1111", '1');
-	printf("ft_split(\"111aki1yama11ryo111jiro1111\", '1'):\n");
-	i = 0;
-	if (!trab)
-		printf("%p\n", trab);
-	else
-	{
-		while (1)
-		{
-			printf("[%d]:%s\n", i, trab[i]);
-			if (!trab[i])
-				break ;
-			free(trab[i]);
-			i++;
-		}
-	}
-	free(trab);
-	return (0);
 }
