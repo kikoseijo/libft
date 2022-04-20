@@ -6,13 +6,13 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 21:10:16 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/14 15:15:09 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:23:04 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c - '0');
+		return (c - ('a' - 'A'));
 	return (c);
 }
