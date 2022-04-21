@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_substr.c                                     :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:14:03 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/20 13:12:30 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/21 17:41:28 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*res;
 
+	if (start > ft_strlen(s))
+		return (ft_calloc(1, 1));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	res = ft_calloc(len + 1, sizeof(char));
+	if (!res)
+		return (NULL);
 	i = 0;
-	res = ft_calloc(len + 1, sizeof(char *));
-	while (start < len)
+	while (s[start] != '\0' && start < ft_strlen(s) && i < len)
 	{
 		res[i] = s[start];
 		start++;
 		i++;
 	}
-	res[i] = '\0';
 	return (res);
 }
