@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strmapi.c                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:19:00 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/20 14:06:22 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:51:04 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*res;
 
 	i = 0;
-	res = ft_calloc(ft_strlen(s) + 1, sizeof(char *));
+	res = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	while (s[i] != '\0')
 	{
 		res[i] = f(i, s[i]);
