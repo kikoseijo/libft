@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:32 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/20 00:09:48 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/22 01:59:22 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,10 @@ int	ft_atoi(const char *str)
 	res = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 		res = (res * 10) + (str[i++] - '0');
-	return (res * is_neg);
+	res *= is_neg;
+	if (is_neg == 1 && res < 0)
+		return (-1);
+	if (is_neg == -1 && res > 0)
+		return (0);
+	return (res);
 }

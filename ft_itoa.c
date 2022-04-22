@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:18:04 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/21 15:50:40 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:01:30 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ char	*ft_itoa(int n)
 	int		len;
 
 	len = ft_nbrlen(n);
-	res = ft_calloc(len, sizeof(char));
+	res = ft_calloc(len + 1, sizeof(char));
+	if (!res)
+		return (0);
 	nb = ft_abs(n);
-	res[len] = '\0';
 	while (len--)
 	{
 		res[len] = nb % 10 + '0';

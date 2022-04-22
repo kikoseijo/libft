@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:19:00 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/21 15:51:04 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:02:17 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	res = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!res)
+		return (0);
 	while (s[i] != '\0')
 	{
 		res[i] = f(i, s[i]);

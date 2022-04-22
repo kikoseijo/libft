@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:16:59 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/20 18:02:08 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/22 01:43:06 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,61 +18,91 @@
 */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int	ft_wordcount(char *s, int sep)
+static size_t	ft_wordcount(char *s, char c)
 {
-	int	i;
+	size_t	count;
+	size_t	i;
 
+	if (!s)
+		return (0);
+	if (!ft_strlen(s))
+		return (0);
 	i = 0;
-	while (*s)
+	count = s[i] != c;
+	while (s[i])
 	{
-		while (*s == (char)sep)
-			s++;
-		if (!*s)
-			break ;
-		while (*s != (char)sep && *s)
-			s++;
+		count += (s[i] == c && s[i + 1] != c && s[i + 1] != '\0');
 		i++;
 	}
-	return (i);
+	return (count);
 }
 
-static int	ft_count_next_word_len(char *s, char c)
+static int	ft_next_worlen(char const *s, int i, char c)
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	while (s[i] != '\0')
+	count = 0;
+	while (s[i])
 	{
-		if (s[i] == c)
-			return (i);
+		if (s[i] == c || s[i] == '\0')
+			return (count);
 		i++;
+		count++;
 	}
-	return (i);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		end;
+	size_t	i;
+	size_t	tab_index;
+	size_t	end;
 	char	**tab;
 
-	if (!s)
-		return (ft_calloc(0, sizeof(char *)));
 	tab = ft_calloc(ft_wordcount((char *)s, c) + 1, sizeof(char *));
-	if (!tab)
+	if (!tab || !s)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	tab_index = 0;
+	while (tab_index < ft_wordcount((char *)s, c))
 	{
 		while (s[i] == c)
 			i++;
-		end = ft_count_next_word_len(&((char *)s)[i], c);
-		tab[j] = ft_substr(&((char *)s)[i], 0, end);
+		end = ft_next_worlen(s, i, c);
+		tab[tab_index] = ft_substr(s, i, end);
+		i += end;
+		tab_index++;
 		i++;
-		j++;
 	}
 	return (tab);
 }
+
+// char	**ft_split(char const *s, char c)
+// {
+// 	char	**split;
+// 	size_t	w;
+// 	size_t	i;
+// 	size_t	len;
+// 	size_t	j;
+//
+// 	w = 0;
+// 	i = 0;
+// 	split = ft_calloc(count_words((char *)s, c) + 1, sizeof(char *));
+// 	while (w < count_words((char *)s, c) && split)
+// 	{
+// 		j = 0;
+// 		len = 0;
+// 		while (s[i] == c)
+// 			i++;
+// 		while (s[i + len] != c && s[i + len] != '\0')
+// 			len++;
+// 		split[w] = ft_calloc(len + 1, sizeof(char));
+// 		while (s[i] != c && s[i] != '\0')
+// 			split[w][j++] = s[i++];
+// 		split[w][j] = '\0';
+// 		w++;
+// 	}
+// 	return (split);
+// }
