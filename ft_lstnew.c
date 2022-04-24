@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:25:11 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 10:25:26 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/24 10:37:38 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@
 ** ’next’ is initialized to NULL.
 */
 
+#include "libft.h"
+
 t_list	*ft_lstnew(void *content)
 {
+	t_list	*res;
+
+	res = (t_list *)malloc(sizeof(t_list));
+	if (!res)
+		return (res = NULL);
+	res->content = content;
+	res->next = NULL;
+	return (res);
 }

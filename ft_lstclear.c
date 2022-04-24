@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:29:54 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/19 10:30:39 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/24 10:53:16 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,19 @@
 ** External functs. free
 */
 
+#include "libft.h"
+
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list	*tmp;
+	t_list	*nlst;
+
+	nlst = *lst;
+	while (nlst)
+	{
+		tmp = nlst->next;
+		ft_lstdelone(tmp, del);
+		nlst = tmp;
+	}
+	*lst = NULL;
 }
