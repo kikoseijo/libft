@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:16:59 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/22 01:43:06 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/25 10:31:27 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,31 +78,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (tab);
 }
-
-// char	**ft_split(char const *s, char c)
-// {
-// 	char	**split;
-// 	size_t	w;
-// 	size_t	i;
-// 	size_t	len;
-// 	size_t	j;
-//
-// 	w = 0;
-// 	i = 0;
-// 	split = ft_calloc(count_words((char *)s, c) + 1, sizeof(char *));
-// 	while (w < count_words((char *)s, c) && split)
-// 	{
-// 		j = 0;
-// 		len = 0;
-// 		while (s[i] == c)
-// 			i++;
-// 		while (s[i + len] != c && s[i + len] != '\0')
-// 			len++;
-// 		split[w] = ft_calloc(len + 1, sizeof(char));
-// 		while (s[i] != c && s[i] != '\0')
-// 			split[w][j++] = s[i++];
-// 		split[w][j] = '\0';
-// 		w++;
-// 	}
-// 	return (split);
-// }
