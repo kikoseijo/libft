@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:27:53 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/24 10:54:24 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/25 08:43:10 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	while (list->next)
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		tmp = list->next;
-		if (!temp->next)
-		{
-			temp->next = new;
-			lst = new;
-		}
-		else
-			lst = tmp;
+		tmp = *lst;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
 }
