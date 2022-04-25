@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:31:35 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/25 08:59:54 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/25 09:00:47 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		}
 		res = res->next;
 		lst = lst->next;
-		// ft_lstdelone(lst, del);
 	}
 	res->next = NULL;
 	return (res);
