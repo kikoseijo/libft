@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:30:53 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/24 10:54:34 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/25 08:48:49 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	while (lst)
 	{
-		f(list->content);
+		f(lst->content);
 		lst = lst->next;
 	}
 }
