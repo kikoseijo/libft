@@ -6,7 +6,7 @@
 #    By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/19 23:24:18 by jseijo-p          #+#    #+#              #
-#    Updated: 2022/04/25 10:35:52 by jseijo-p         ###   ########.fr        #
+#    Updated: 2022/04/26 12:38:25 by jseijo-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,16 +27,12 @@ BONUS	=	ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 
 BONUS_OBJS	=	$(BONUS:.c=.o)
 
-CC		= gcc
-
-CFLAGS	= -Wall -Wextra -Werror
-
 RM		= rm -f
 
 all: $(NAME)
 
 $(NAME):
-		$(CC) -c $(CFLAGS) $(SRCS)
+		gcc -c -Wall -Wextra -Werror $(SRCS)
 		ar crs $(NAME) $(OBJS)
 
 clean:
