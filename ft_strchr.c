@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:56 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/21 09:20:20 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/29 12:39:08 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,20 @@
 ** does not appear in the string.
 */
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
-	while (*s != '\0' && (char)c != *s)
-		s++;
-	if ((char)c == *s)
-		return ((char *)s);
-	return (0);
+	int	i;
+
+	if (!s)
+		return (NULL);
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return (NULL);
 }

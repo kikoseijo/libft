@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:15:24 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/22 02:00:04 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/29 12:41:14 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*res;
 
 	i = 0;
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	res = ft_calloc(len, 1);
+	llen = (int)ft_strlen(s1) + (int)ft_strlen(s2) + 1;
+	res = ft_calloc(len, sizeof(char));
 	if (!res)
-		return (0);
-	while (i < ft_strlen(s1))
+		return (NULL);
+	while (s1 && s1[i] != '\0')
 	{
-		res[i] = s1[i];
+		res[i] = (char)s1[i];
 		i++;
 	}
 	j = 0;
-	while (j < ft_strlen(s2))
+	while (s2 && s2[j] != '\0')
 	{
-		res[i + j] = s2[j];
+		res[i + j] = (char)s2[j];
 		j++;
 	}
 	return (res);
