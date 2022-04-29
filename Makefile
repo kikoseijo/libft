@@ -6,7 +6,7 @@
 #    By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/19 23:24:18 by jseijo-p          #+#    #+#              #
-#    Updated: 2022/04/26 12:38:25 by jseijo-p         ###   ########.fr        #
+#    Updated: 2022/04/28 21:49:10 by jseijo-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,18 +32,21 @@ RM		= rm -f
 all: $(NAME)
 
 $(NAME):
-		gcc -c -Wall -Wextra -Werror $(SRCS)
+		gcc -c -Wall -Wextra -Werror -g $(SRCS)
 		ar crs $(NAME) $(OBJS)
 
 clean:
-			$(RM) $(OBJS) $(BONUS_OBJS)
+		$(RM) $(OBJS) $(BONUS_OBJS)
 
-fclean:		clean
-				$(RM) $(NAME)
+fclean:
+			clean
+			$(RM) $(NAME)
 
-re:			fclean all
+re:
+	fclean all
 
-bonus:		$(OBJS) $(BONUS_OBJS)
+bonus:
+			gcc -c -Wall -Wextra -Werror -g $(SRCS) $(BONUS)
 			ar crs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all, clean, fclean, re

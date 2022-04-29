@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:19:44 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/26 16:21:08 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/04/28 21:52:27 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (s[i] && *f)
 	{
-		(*f)(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }
