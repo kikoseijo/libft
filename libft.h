@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 20:48:21 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/20 17:59:33 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/05/03 08:44:39 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
-char				*ft_strchr(const char *s, int c);
+char				*ft_strchr(char *s, int c);
 char				*ft_strdup(const char *s1);
 size_t				ft_strlcat(char *dst, const char *src,
 						size_t dstsize);

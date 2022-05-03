@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:11:56 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/05/03 08:40:30 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/05/03 08:44:25 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 ** does not appear in the string.
 */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strchr(char *s, int c)
 {
