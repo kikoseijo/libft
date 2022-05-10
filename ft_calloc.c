@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:12:50 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/25 10:28:09 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/05/10 08:40:32 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,13 @@ void	*ft_calloc(size_t count, size_t size)
 ** total_size = count + size;
 ** if (total_size < count || total_size < size)
 ** 	return (NULL);
+*/
+
+/*
+** int	main(void)
+** {
+** 	printf("%s\n", ft_calloc(2, sizeof(char)));
+** 	printf("%s\n", ft_calloc(__INT_MAX__, __INT_MAX__));
+** 	return (0);
+** }
 */
