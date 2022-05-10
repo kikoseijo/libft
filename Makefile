@@ -6,7 +6,7 @@
 #    By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/19 23:24:18 by jseijo-p          #+#    #+#              #
-#    Updated: 2022/05/10 08:40:04 by jseijo-p         ###   ########.fr        #
+#    Updated: 2022/05/10 10:11:02 by jseijo-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,7 @@ clean:
 		rm -f $(OBJS)
 		echo $(OBJS) cleaned.
 
-fclean:
-			clean
+fclean: clean
 			rm -f $(NAME)
 			echo $(NAME) cleaned.
 
