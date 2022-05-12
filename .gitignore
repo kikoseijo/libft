@@ -1,10 +1,6 @@
 .on-save.json
-.main.c
 main.c
 test*
-libftTester/
-libftTester/**
-ft_splitC.c
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,c++
