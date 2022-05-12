@@ -6,14 +6,12 @@
 /*   By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 20:48:21 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/05/10 08:37:36 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:40:14 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -37,10 +35,8 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 char				*ft_strchr(char *s, int c);
 char				*ft_strdup(const char *s1);
-size_t				ft_strlcat(char *dst, const char *src,
-						size_t dstsize);
-size_t				ft_strlcpy(char *dst, const char *src,
-						size_t dstsize);
+size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
@@ -94,6 +90,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 #  define BUFFER_SIZE 42
 # endif
 
-char	*get_next_line(int fd);
+char				*get_next_line(int fd);
 
 #endif
