@@ -6,7 +6,7 @@
 /*   By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 08:33:21 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/05/10 08:35:45 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:45:20 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,15 @@ static char	*read_line(int fd, char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buff;
+	static char	*buff[256];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE < 1)
+	if (fd < 0 || BUFFER_SIZE < 1 || (read(fd, 0, 0) < 0))
 		return (NULL);
-	buff = read_line(fd, buff);
-	if (!buff)
+	buf[fd] = read_line(fd, buf[fd]);
+	if (!buf[fd])
 		return (NULL);
-	line = get_line(buff);
-	buff = remove_line(buff);
+	line = get_line(buf[fd]);
+	buf[fd] = remove_line(buf[fd]);
 	return (line);
 }
