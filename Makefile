@@ -6,7 +6,7 @@
 #    By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/19 23:24:18 by jseijo-p          #+#    #+#              #
-#    Updated: 2022/06/07 10:51:20 by jseijo-p         ###   ########.fr        #
+#    Updated: 2022/06/07 11:34:55 by jseijo-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ SRCS	=	src/maths/ft_atoi.c \
 				src/lists/ft_lstmap.c \
 				src/utils/ft_print_int.c \
 				src/utils/ft_print_p.c \
-				src/utils/ft_print_uint.c \
+				src/utils/ft_print_unint.c \
 				src/utils/ft_print_x.c \
 				src/utils/ft_printf.c \
 				src/utils/get_next_line.c
