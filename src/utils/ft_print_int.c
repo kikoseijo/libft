@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 10:30:53 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/05/17 21:30:19 by jseijo-p         ###   ########.fr       */
+/*   Created: 2022/04/25 16:37:17 by jseijo-p          #+#    #+#             */
+/*   Updated: 2022/06/07 10:50:09 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Iterates the list ’lst’ and applies the function
-** ’f’ on the content of each node.
-*/
-
 #include "../../inc/libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+static void	ft_print_integer(t_print *model, int nb)
 {
-	if (!lst || !f)
-		return ;
-	while (lst)
+	long long	n;
+
+	n = (long long)nb;
+	if (n < 0)
 	{
-		f(lst->content);
-		lst = lst->next;
+		ft_putchar_fd('-', 1);
+		model->str_len += 1;
+		n *= -1;
 	}
+	if (n > 9)
+		ft_print_integer(model, n / 10);
+	n = n % 10;
+	model->str_len += 1;
+	ft_putchar_fd(n + '0', 1);
+}
+
+void	ft_print_int(t_print *model, int nb)
+{
+	ft_print_integer(model, nb);
+	model->str++;
 }

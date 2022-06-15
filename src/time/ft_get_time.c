@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_get_time.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 10:30:53 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/05/17 21:30:19 by jseijo-p         ###   ########.fr       */
+/*   Created: 2022/06/07 10:36:41 by jseijo-p          #+#    #+#             */
+/*   Updated: 2022/06/07 10:38:36 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Iterates the list ’lst’ and applies the function
-** ’f’ on the content of each node.
-*/
-
 #include "../../inc/libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+long	ft_get_time(void)
 {
-	if (!lst || !f)
-		return ;
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	long	res;
+	timeval	time;
+
+	gettimeofday(&time, NULL);
+	res = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+	return (res);
 }
