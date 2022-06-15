@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jseijo-p <jseijo-p@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:18:04 by jseijo-p          #+#    #+#             */
-/*   Updated: 2022/04/22 02:01:30 by jseijo-p         ###   ########.fr       */
+/*   Updated: 2022/06/15 11:42:47 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@
 */
 
 #include "../../inc/libft.h"
-
-static long	ft_abs(long n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
 
 static int	ft_nbrlen(long long int n)
 {
@@ -48,12 +41,17 @@ char	*ft_itoa(int n)
 	char	*res;
 	long	nb;
 	int		len;
+	int		sign;
 
+	sign = 1;
 	len = ft_nbrlen(n);
-	res = ft_calloc(len + 1, sizeof(char));
+	res = (char *)malloc((len + 1) * sizeof(char));
+	res[len] = '\0';
 	if (!res)
 		return (0);
-	nb = ft_abs(n);
+	if (n < 0)
+		sign = -1;
+	nb = ((long)n) * sign;
 	while (len--)
 	{
 		res[len] = nb % 10 + '0';
